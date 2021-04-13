@@ -1,2 +1,6 @@
 # ProiectSincretic
-Traversarea Arborilor
+Traversarea Arborilor Binari in:
+- Inordine
+- Preordine
+- Postordine
+- Level Order
