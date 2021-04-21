@@ -50,20 +50,33 @@ public class Nod {
     }
     
     public void levelOrder(Nod nod){
-        Queue<Nod> queue = new LinkedList<Nod>();
-        queue.add(nod);
-        
-        while(!queue.isEmpty()){
-            Nod temp = queue.poll();
-            System.out.print(temp.key + " ");
-            
-            if(temp.left != null){
-                queue.add(temp.left);
-            }
-            
-            if(temp.right != null){
-                queue.add(temp.right);
-            }
+      if (nod == null)
+        return;
+  
+        Queue<Nod> q = new LinkedList<>();
+  
+        q.add(nod);
+        q.add(null);
+  
+        while (!q.isEmpty()) {
+  
+        Nod curr = q.poll();
+  
+       if (curr == null) {
+        if (!q.isEmpty()) {
+          q.add(null);
+          System.out.println();
         }
+      } else {
+        if (curr.left != null)
+          q.add(curr.left);
+        
+        if (curr.right != null)
+          q.add(curr.right);
+  
+        System.out.print(curr.key + " ");
+      }
     }
+   }
+    
 }
